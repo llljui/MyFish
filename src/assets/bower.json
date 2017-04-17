@@ -1,0 +1,19 @@
+{
+  "name": "assets",
+  "authors": [
+    "xijiang <872013164@qq.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lbi",
+    "test",
+    "tests"
+  ]
+}

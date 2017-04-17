@@ -1,3 +1,28 @@
-<h1>
-  {{title}}
-</h1>
+<div>
+	<img src="../assets/img/bg.jpg" alt="暂无图片" class="img-responsive">
+</div>
+<!-- 顶部导航 -->
+<nav class="navbar navbar-fixed-top navbar-default navbar-inverse visible-lg visible-md visible-sm" role="navigation">
+	<div class="container-fluid ">
+		<div class="navbar-header header_margin">
+			<a href="#" class="navbar-brand">咸鱼阁</a>
+		</div>
+		<div>
+			<ul class="nav navbar-nav ">
+				<li><a [routerLink]="['/home']" routerLinkActive="active">首页</a></li>
+			    <li><a [routerLink]="['/zhxs']" routerLinkActive="active">朝花夕拾</a></li>
+			    <li><a [routerLink]="['/cxrs']" routerLinkActive="active">程序人生</a></li>
+			    <li><a [routerLink]="['/miss']" routerLinkActive="active">抚今思昔</a></li>
+			    <li><a [routerLink]="['/about']" routerLinkActive="active">关于我</a></li>
+			</ul>
+		</div>
+	</div>
+</nav>
+<!---主体内容区域-->
+<div class="j_contain visible-lg">
+	<router-outlet></router-outlet> 
+</div>
+
+<!--影子区域-->
+
+<footer class="text-center text-success ">Design by BigJiang 浙ICP备17012690号</footer>

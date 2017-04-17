@@ -1,0 +1,20 @@
+.j_contain{
+	border: 1px solid white;
+	position: absolute;
+	width: 45%;
+	height: 350px;
+	z-index: 10;
+	top: 90px;
+	left: 50px;
+	/* border-radius: 10px; */
+}
+.header_margin{margin-left: 40px;}
+.active{
+	border-bottom:1px solid green; 
+}
+.xy_input{
+	position: relative;
+	bottom: 335px;
+	left: 200px;
+}
+
