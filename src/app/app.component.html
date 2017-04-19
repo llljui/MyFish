@@ -21,7 +21,7 @@
 <!---主体内容区域-->
 <div class="j_contain visible-lg">
 	<router-outlet></router-outlet> 
-	<input type="text" name="myvalue1"  placeholder="请输入您要找的内容" [(ngModel)]="myvalue" class="xy_input"  autocomplete="on">
+	<input type="text" name="myvalue1" (keyup.enter)="lgModal.show()" placeholder="请输入您要找的内容" [(ngModel)]="myvalue" class="xy_input"  autocomplete="on">
 	<button type="button" (click)="lgModal.show()" class="btn btn-default xj_button" >Serach</button>
 	<div class="xjyz_button" >
 		<input type="text" name="myvalue2" class="xy_input" disabled="disabled"  placeholder="请输入您要找的内容" value="{{myvalue}}" >
