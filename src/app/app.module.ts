@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
-
 import { rootRouterConfig } from './app.router';
 
+import { ModalModule } from '._ngx-bootstrap@1.6.6@ngx-bootstrap/modal';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ContentComponent } from './content/content.component';
@@ -28,11 +28,13 @@ let rootRouterModule:ModuleWithProviders=RouterModule.forRoot(rootRouterConfig);
     AboutComponent
   ],
   imports: [
+   ModalModule.forRoot(),
     rootRouterModule,
     RouterModule,
     BrowserModule,
     FormsModule,
     HttpModule
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

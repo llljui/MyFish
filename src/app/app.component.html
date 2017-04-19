@@ -21,13 +21,30 @@
 <!---主体内容区域-->
 <div class="j_contain visible-lg">
 	<router-outlet></router-outlet> 
-	<input type="text" name="" class="xy_input" placeholder="请输入您要找的内容" autocomplete="on">
-	<button type="button" class="btn btn-default xj_button">Serach</button>
+	<input type="text" name="myvalue1"  placeholder="请输入您要找的内容" [(ngModel)]="myvalue" class="xy_input"  autocomplete="on">
+	<button type="button" (click)="lgModal.show()" class="btn btn-default xj_button" >Serach</button>
 	<div class="xjyz_button" >
-		<input type="text" name="" class="xy_input" disabled="disabled" value="" placeholder="请输入您要找的内容">
-		<button type="button" class="btn btn-default xj_button" disabled="disabled">Serach</button>
+		<input type="text" name="myvalue2" class="xy_input" disabled="disabled"  placeholder="请输入您要找的内容" value="{{myvalue}}" >
+		<button type="button" class="btn btn-default xj_button" disabled style="cursor: default;">Serach</button>
 	</div>
 </div>
-
 <!--影子区域-->
+<!--modal-->
+<div bsModal #lgModal="bs-modal" class="modal fade" tabindex="-1" role="dialog"  aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title text-center">搜索结果</h4>
+        <button type="button" class="close pull-right" (click)="lgModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       <p class="text-center text-info" >{{myvaluein(myvalue)}}</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <footer class="text-center text-success ">Design by BigJiang 浙ICP备17012690号</footer>
