@@ -11,7 +11,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
   	$(document).ready(function () {
-			console.log('xiexie');
 				$(".content_3").mCustomScrollbar({
 					scrollInertia:600,
 					autoDraggerLength:false

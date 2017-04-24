@@ -1,6 +1,7 @@
 import { Component,Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import { Observable } from "rxjs/Rx";
+import 'rxjs/add/operator/map';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -8,26 +9,37 @@ import { Observable } from "rxjs/Rx";
 })
 @Injectable()
 export class AppComponent {
-constructor(private _http:Http){
-/*   _http.get('http://localhost:4200/src/API/info.json')
-       .map(res=>res.json())
+ constructor(){
+/*   _http.get('http://localhost:4200/src/API/info.json').map(res=>res.json())
        .subscribe((res)=>{
-         console.log(res);
+         console.log(res.bigjiang1.name);
        },(error)=>{
          console.log(error);
        });*/
 };
-
-myvaluein=(myvalue)=>{
-  let search=[];
+ myvaluein=(myvalue,_http:Http)=>{
   if (!myvalue) {
-  	console.log(myvalue);
-  	return "请输入关键词";
-  }
-  else if (search.length===0) {
-  	console.log(myvalue);
-  	return "搜不到您要的内容！";
-  }
-  else{return myvalue;}
+    return "请输入关键词";
+  }    
+  else{
+   let valueout=(_http)=>{
+         _http.get('http://localhost:4200/src/API/info.json')
+              .map(res=>res.json())
+              .subscribe((res)=>{
+                if (!res.myvalue) {
+                  return myvalue+"not find";
+                }
+                else{
+                    console.log(res.bigjiang1);
+                    return res.bigjiang1;
+                }
+             
+             },(error)=>{
+               console.log(error);
+             });
+  };
+  valueout(_http);
 }
+}
+
 }
