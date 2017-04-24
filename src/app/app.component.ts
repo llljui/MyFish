@@ -9,7 +9,8 @@ import 'rxjs/add/operator/map';
 })
 @Injectable()
 export class AppComponent {
- constructor(){
+ constructor(public _http:Http){
+    console.log(_http);
 /*   _http.get('http://localhost:4200/src/API/info.json').map(res=>res.json())
        .subscribe((res)=>{
          console.log(res.bigjiang1.name);
@@ -17,13 +18,14 @@ export class AppComponent {
          console.log(error);
        });*/
 };
- myvaluein=(myvalue,_http:Http)=>{
+ myvaluein=(myvalue,Http:Http)=>{
   if (!myvalue) {
+    console.log(Http);
     return "请输入关键词";
-  }    
+  }
   else{
-   let valueout=(_http)=>{
-         _http.get('http://localhost:4200/src/API/info.json')
+   let valueout=()=>{
+         Http.get('http://localhost:4200/src/API/info.json')
               .map(res=>res.json())
               .subscribe((res)=>{
                 if (!res.myvalue) {
@@ -38,7 +40,7 @@ export class AppComponent {
                console.log(error);
              });
   };
-  valueout(_http);
+  valueout();
 }
 }
 
