@@ -6,7 +6,7 @@ import { ZhxsComponent } from './zhxs';
 import { CxrsComponent } from './cxrs';
 import { MissComponent } from './miss';
 import { AboutComponent } from './about';
-
+import { PlugsComponent } from "./plugs";
 
 export const rootRouterConfig: Routes = [
 {
@@ -30,6 +30,10 @@ component:ZhxsComponent,},
 },
 {
 	path:'miss',
+	component:MissComponent
+},
+{
+	path:'plugs',
 	component:MissComponent
 },
 {

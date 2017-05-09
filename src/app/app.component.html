@@ -13,6 +13,7 @@
 			    <li><a [routerLink]="['/zhxs']" routerLinkActive="active">朝花夕拾</a></li>
 			    <li><a [routerLink]="['/cxrs']" routerLinkActive="active">程序人生</a></li>
 			    <li><a [routerLink]="['/miss']" routerLinkActive="active">抚今思昔</a></li>
+			    <li><a [routerLink]="['/plugs']" routerLinkActive="active">Plugs</a></li>
 			    <li><a [routerLink]="['/about']" routerLinkActive="active">关于我</a></li>
 			</ul>
 		</div>
@@ -20,6 +21,9 @@
 </nav>
 <!---主体内容区域-->
 <div class="j_contain visible-lg">
+	<div class="con_2">
+
+	</div>
 	<router-outlet></router-outlet> 
 	<input type="text" name="myvalue1" (keyup.enter)="lgModal.show()" placeholder="请输入您要找的内容" [(ngModel)]="myvalue" class="xy_input"  autocomplete="on">
 	<button type="button" (click)="lgModal.show()" class="btn btn-default xj_button" >Serach</button>
@@ -39,12 +43,11 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
-       <p class="text-center text-info" >{{myvaluein(myvalue)}}</p>
+      <div class="modal-body" id="modalbody">
+       <p class="text-center text-info" [innerHTML]="sobj.gets(myvalue)"></p>
+       <p class="text-center text-info" ></p>
       </div>
     </div>
   </div>
 </div>
-
-
 <footer class="text-center text-success ">Design by BigJiang 浙ICP备17012690号</footer>

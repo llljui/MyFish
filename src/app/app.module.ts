@@ -14,6 +14,7 @@ import { ZhxsComponent } from './zhxs/zhxs.component';
 import { CxrsComponent } from './cxrs/cxrs.component';
 import { MissComponent } from './miss/miss.component';
 import { AboutComponent } from './about/about.component';
+import { PlugsComponent } from './plugs/plugs.component';
 
 let rootRouterModule:ModuleWithProviders=RouterModule.forRoot(rootRouterConfig);
 
@@ -25,7 +26,8 @@ let rootRouterModule:ModuleWithProviders=RouterModule.forRoot(rootRouterConfig);
     ZhxsComponent,
     CxrsComponent,
     MissComponent,
-    AboutComponent
+    AboutComponent,
+    PlugsComponent
   ],
   imports: [
     ModalModule.forRoot(),

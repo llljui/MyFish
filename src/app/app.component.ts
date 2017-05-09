@@ -1,7 +1,9 @@
-import { Component,Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Component,Injectable,OnInit,DoCheck } from '@angular/core';
+import { Http,URLSearchParams } from '@angular/http';
 import { Observable } from "rxjs/Rx";
 import 'rxjs/add/operator/map';
+/*import 'rxjs/add/operator/toPromise';*/
+declare var $:any; 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,39 +11,21 @@ import 'rxjs/add/operator/map';
 })
 @Injectable()
 export class AppComponent {
- constructor(public _http:Http){
-    console.log(_http);
-/*   _http.get('http://localhost:4200/src/API/info.json').map(res=>res.json())
-       .subscribe((res)=>{
-         console.log(res.bigjiang1.name);
-       },(error)=>{
-         console.log(error);
-       });*/
-};
- myvaluein=(myvalue,Http:Http)=>{
-  if (!myvalue) {
-    console.log(Http);
-    return "请输入关键词";
-  }
-  else{
-   let valueout=()=>{
-         Http.get('http://localhost:4200/src/API/info.json')
-              .map(res=>res.json())
-              .subscribe((res)=>{
-                if (!res.myvalue) {
-                  return myvalue+"not find";
-                }
-                else{
-                    console.log(res.bigjiang1);
-                    return res.bigjiang1;
-                }
-             
-             },(error)=>{
-               console.log(error);
-             });
-  };
-  valueout();
+ constructor(public http:Http){}
+public sobj={
+	gets:(value:any) =>{
+		let http:Http;
+		if (!value) {return "请输入关键词";}
+        else{    
+                 value=http.get('./src/API/info.json')
+		                         .map(res=>res.json())
+		                         .subscribe((res)=>{console.log(res.bigjiang1.age)});	                         
+            }
+	}
 }
-}
-
+ ngOnInit(){
+ 	if(screen.width>1440) {
+ 		$('.xy_input').css('margin-top','32%');
+ 	}
+}             
 }

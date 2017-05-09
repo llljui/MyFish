@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
 declare var $:any; 
 @Component({
   selector: 'app-home',
@@ -7,10 +8,9 @@ declare var $:any;
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public http:Http) { } 
   ngOnInit() {
-  	$(document).ready(function () {
+ 	  	$(document).ready(function () {
 				$(".content_3").mCustomScrollbar({
 					scrollInertia:600,
 					autoDraggerLength:false
@@ -25,7 +25,7 @@ export class HomeComponent implements OnInit {
 					e.preventDefault();
 					$(".content_8").mCustomScrollbar("scrollTo","bottom");
 				});
-  	});
-  }
+  	});	
+ }
 
 }

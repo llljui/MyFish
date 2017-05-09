@@ -1,15 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 declare var $:any;
 @Component({
-  selector: 'app-cxrs',
-  templateUrl: './cxrs.component.html',
-  styleUrls: ['./cxrs.component.css']
+  selector: 'app-plugs',
+  templateUrl: './plugs.component.html',
+  styleUrls: ['./plugs.component.css']
 })
-export class CxrsComponent implements OnInit {
+export class PlugsComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit() {
+  	 	$('.xy_input').css('margin-top','32%');	
  	  	$(document).ready(function () {
 				$(".content_3").mCustomScrollbar({
 					scrollInertia:600,

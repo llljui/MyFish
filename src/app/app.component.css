@@ -14,10 +14,11 @@
 	border-bottom:1px solid green; 
 }
 .xy_input{
-margin-top: 73px;
+margin-top: 15%;
 margin-left: 150px;
 width: 55%;
 height: 33px;
 }
 .xj_button{margin-left: -5px;margin-top: -2px;}
 .xjyz_button{transform: rotateX(180deg);margin-top:5px;opacity: 0.3;}
+.con_2{position: absolute;width: 260px;height: 100%;border: 1px solid white;right:-110%;border-radius: 10px 10px 10px;}
