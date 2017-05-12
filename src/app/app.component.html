@@ -22,8 +22,12 @@
 <!---主体内容区域-->
 <div class="j_contain visible-lg">
 	<div class="con_2 text-center">{{reslog}}
-		<ul>
-		    <li *ngFor="let ser of searv">{{ser}}</li>
+		<ul class="con_2_ul">
+		    <li *ngFor="let ser of searv" class="xy_info text-left">
+		       <a href="{{ser.moive.alink}}" title="{{ser.moive.title}}" target="_self">	
+		       	  {{ser.moive.name}}{{ser.moive.introduce}}
+		       </a>
+		    </li>
 		</ul>
 	</div>
 	<router-outlet></router-outlet> 

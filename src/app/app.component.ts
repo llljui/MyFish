@@ -2,7 +2,6 @@ import { Component,Injectable,OnInit,DoCheck } from '@angular/core';
 import { Http,URLSearchParams } from '@angular/http';
 import { Observable } from "rxjs/Rx";
 import 'rxjs/add/operator/map';
-
 /*import 'rxjs/add/operator/toPromise';*/
 declare var $:any; 
 @Component({
@@ -12,6 +11,7 @@ declare var $:any;
 })
 @Injectable()
 export class AppComponent {
+private apiurl='../assets/API/info.json';  
 public reslog:string;  
 public searv:any=[];  
 constructor(public http:Http){}
@@ -22,12 +22,15 @@ constructor(public http:Http){}
        this.searv=[];  
      }
      else{
-         this.http.get('../assets/info.json')
+         this.http.get(this.apiurl)
                   .map(res=>res.json())
-                  .subscribe((res)=>{ 
+                  .subscribe((res)=>{
+                  this.searv=[]; 
                   this.reslog="搜索结果如下"; 
-                  (()=>{this.searv.push(res.bigjiang1);})();
-                  console.log(this.searv);      
+                  (()=>{
+                    console.log(res);
+                    this.searv.push(res.moive);
+                  })();     
                 },(error)=>{
                   alert(error);
                   console.log(error);
