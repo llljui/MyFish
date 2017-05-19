@@ -1,5 +1,5 @@
 import { Component,Injectable,OnInit,DoCheck } from '@angular/core';
-import { Http,URLSearchParams } from '@angular/http';
+import { Http,URLSearchParams,Jsonp } from '@angular/http';
 import { Observable } from "rxjs/Rx";
 import 'rxjs/add/operator/map';
 /*import 'rxjs/add/operator/toPromise';*/
@@ -11,10 +11,10 @@ declare var $:any;
 })
 @Injectable()
 export class AppComponent {
-private apiurl='../assets/API/info.json';  
+private apiurl='../assets/API/myinfo.json';  
 public reslog:string;  
 public searv:any=[];  
-constructor(public http:Http){}
+constructor(public http:Http,public jsonp:Jsonp){}
  public search={
    show:(value)=>{
      if (!value) {
@@ -22,25 +22,39 @@ constructor(public http:Http){}
        this.searv=[];  
      }
      else{
-         this.http.get(this.apiurl)
+         this.http.get(this.apiurl,{search:value})
                   .map(res=>res.json())
                   .subscribe((res)=>{
                   this.searv=[]; 
                   this.reslog="搜索结果如下"; 
                   (()=>{
                     console.log(res);
-                    this.searv.push(res.moive);
                   })();     
                 },(error)=>{
-                  alert(error);
                   console.log(error);
                 });
      } 
    }
  }
- ngOnInit(){
+ngOnInit(){
  	if(screen.width>1440) {
  		$('.xy_input').css('margin-top','32%');
  	}
+  if(typeof(Storage)!=="undefined")
+  {
+  console.log('支持 localStorage  sessionStorage 对象!');
+      if (!localStorage.visiter) {
+       localStorage.visiter=1;
+       console.log(localStorage.visiter);
+       $("#visiter").text("历史访问人数:"+localStorage.visiter);
+      }
+      else{
+        localStorage.visiter++;
+        $("#visiter").text("历史访问人数:"+localStorage.visiter);
+      }
+} 
+  else {
+   console.log(' 抱歉!不支持web存储');
+}
 }      
 }

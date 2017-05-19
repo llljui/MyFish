@@ -23,3 +23,4 @@ code{color:#5b70ff;}
 .info{position:absolute; margin:20px 0 40px 40px; width:260px; height:100px; color:#ccc; font-size:18px; padding:5px;}
 .info span:first-child{color:#26beff;}
 .info span:last-child{font-size:34px; line-height:38px;}
+.localright{margin-right: 50px;position: absolute;right: 0px;}

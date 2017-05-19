@@ -1,5 +1,11 @@
 <div class="wrapper">
 	<div class="content_3 content">
-		我是苏玲霞
+	<ul class="infoindex">
+	    <li *ngFor="let index of infoindex" class="indexli text-center" (focus)="border()">{{index}}</li>
+	</ul>
+	<ul class="user1" *ngIf="dis">
+		<li><img src="../../assets/img/user1.jpg" alt="mylogo" class="img-thumbnail infoimg" width="25%" height="25%"></li>
+	    <li *ngFor="let info of myinfo" class="text-right infoli"><p class="infop">{{info}}</p></li>
+	</ul>
 	</div>
 </div>

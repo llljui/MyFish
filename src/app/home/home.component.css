@@ -1,0 +1,5 @@
+.divspans{margin-left:76px;margin-top:-25px;}
+.spans{margin-left:6px;opacity:0;transform: scale(1, 1);}
+.pli{height:20%;width:100%;}
+.ptext{display: inline;position:relative;margin-left:20px;text-overflow:ellipsis;}
+.pimg{display: inline;float:left;}

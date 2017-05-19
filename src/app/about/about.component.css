@@ -1,0 +1,7 @@
+.user1{margin-left: -35px;}
+.infoimg{margin-bottom: 10px;margin-left:220px;}
+.infoindex{position: absolute;top: 85px;}
+.indexli{margin-top: 10px;opacity:0;color:#d6ddd6;cursor: pointer;text-align: center;border-bottom: 1px solid #312c29;}
+.indexli:hover{transition: 1s;border-bottom: }
+.infoli{color:#51fdad;opacity: 0;}
+.infop{color:#51fdad;cursor: pointer;}

@@ -7,7 +7,9 @@ declare var $:any;
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  public spans=new Array(25);
+  public article:any;
+  public moive:any;
   constructor(public http:Http) { } 
   ngOnInit() {
  	  	$(document).ready(function () {
@@ -25,7 +27,21 @@ export class HomeComponent implements OnInit {
 					e.preventDefault();
 					$(".content_8").mCustomScrollbar("scrollTo","bottom");
 				});
-  	});	
+  	});
+
+ 	 this.spans.fill(" > ");
+ 	 for(let i=0;i<this.spans.length;i++){
+ 	 	setTimeout(()=>{
+ 	 		$(".divspans span").eq(i).css({"transition":"1s","opacity":"1","transform":"scale(2,2)"});
+ 	 	},i*260);
+ 	 }
+ 	 this.http.get("../../src/assets/API/article.json").map(res=>res.json()).subscribe((res)=>{
+ 	 	this.article=res.article;
+ 	 	this.moive=res.moive;
+ 	 	console.log(typeof(res.article));
+ 	 },(error)=>{console.log(error);})
+
+
  }
 
 }

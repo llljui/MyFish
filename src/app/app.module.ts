@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { ModuleWithProviders } from '@angular/core';
 import { rootRouterConfig } from './app.router';
 import { ModalModule } from '._ngx-bootstrap@1.6.6@ngx-bootstrap/modal';
+import { JsonpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -15,6 +16,7 @@ import { CxrsComponent } from './cxrs/cxrs.component';
 import { MissComponent } from './miss/miss.component';
 import { AboutComponent } from './about/about.component';
 import { PlugsComponent } from './plugs/plugs.component';
+import { AdminComponent } from './admin/admin.component';
 
 let rootRouterModule:ModuleWithProviders=RouterModule.forRoot(rootRouterConfig);
 
@@ -27,7 +29,8 @@ let rootRouterModule:ModuleWithProviders=RouterModule.forRoot(rootRouterConfig);
     CxrsComponent,
     MissComponent,
     AboutComponent,
-    PlugsComponent
+    PlugsComponent,
+    AdminComponent
   ],
   imports: [
     ModalModule.forRoot(),
@@ -35,8 +38,8 @@ let rootRouterModule:ModuleWithProviders=RouterModule.forRoot(rootRouterConfig);
     RouterModule,
     BrowserModule,
     FormsModule,
-    HttpModule
-   
+    HttpModule,
+    JsonpModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
