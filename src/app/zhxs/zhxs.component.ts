@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 declare var $:any;
+import { fadein } from "../animations/fadein"
 @Component({
   selector: 'app-zhxs',
   templateUrl: './zhxs.component.html',
-  styleUrls: ['./zhxs.component.css']
+  styleUrls: ['./zhxs.component.css'],
+  animations:[fadein]
 })
 export class ZhxsComponent implements OnInit {
 

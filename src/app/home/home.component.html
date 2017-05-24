@@ -1,18 +1,20 @@
-<div class="wrapper">
+<div class="wrapper" [@fadein]="'in'" >
 	<div class="content_3 content">
-     <header><h4><font class="text-danger">文章</font><font class="text-success">推荐</font></h4></header>
-     <div class="divspans"><span *ngFor="let span of spans" class="text-success spans">{{span}}</span></div>
+     <header><h4><font class="font1">最新</font><font class="font2">推荐</font></h4></header>
+     <div class="divspans progress progress-striped active">
+     	<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" [style.width]="pro" >
+			<span class="sr-only">100%完成</span>
+		</div>
+	</div>
      <div>
 		<ul>
-		    <li class="pli" *ngFor="let mos of moive">
-		    	<a href="" title="">
-		    		<img src="http://jbcdn2.b0.upaiyun.com/2014/12/91e7e29a085d868e7d49d93d911787a9.png" alt="loaddefault" class="img-thumbnail pimg" width="17%" height="17%">
-			 	   <h4 class="text-center">{{mos.name}}</h4>
-			    	<p class="ptext">
-			    		在《JavaScript深入之执行上下文栈》中讲到，当JavaScript代码执行一段可执行代码(executable code)时，会创建对应的执行上下文(execution context)。
-			    	</p>
-		    	</a>		    
-		    </li>
+		  <li class="pli" *ngFor="let item of article;let i=index;"> 
+		   	<a (click)="download(item.dl)" href="javascript:void(0);" title="{{item.name}}">
+		   		<img src="{{item.imgsrc}}" alt="loaddefault" class="img-thumbnail pimg" width="17%" height="17%">
+		   	    <h5 class="text-center">{{item.name}}</h5>
+		        <p class="ptext">{{item.bodys}}</p>
+		   	</a>		    
+		   </li>
 		</ul>
 	</div>
 	</div>

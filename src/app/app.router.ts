@@ -35,7 +35,7 @@ component:ZhxsComponent,},
 },
 {
 	path:'plugs',
-	component:MissComponent
+	component:PlugsComponent
 },
 {
 	path:'about',

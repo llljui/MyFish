@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { fadein } from "../animations/fadein";
 declare var $:any;
 @Component({
   selector: 'app-plugs',
   templateUrl: './plugs.component.html',
-  styleUrls: ['./plugs.component.css']
+  styleUrls: ['./plugs.component.css'],
+  animations:[fadein]
 })
 export class PlugsComponent implements OnInit {
 
@@ -11,8 +13,8 @@ export class PlugsComponent implements OnInit {
 
   ngOnInit() {
   	 	$('.xy_input').css('margin-top','32%');	
- 	  	$(document).ready(function () {
-				$(".content_3").mCustomScrollbar({
+ 	  	$(document).ready(function () {  		
+/*				$(".content_3").mCustomScrollbar({
 					scrollInertia:600,
 					autoDraggerLength:false
 				});
@@ -25,7 +27,7 @@ export class PlugsComponent implements OnInit {
 				$(".callback_demo a[rel='scrollto-bottom']").click(function(e){
 					e.preventDefault();
 					$(".content_8").mCustomScrollbar("scrollTo","bottom");
-				});
+			});*/
   	});	
   }
 

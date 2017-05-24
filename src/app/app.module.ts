@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
@@ -7,6 +8,7 @@ import { ModuleWithProviders } from '@angular/core';
 import { rootRouterConfig } from './app.router';
 import { ModalModule } from '._ngx-bootstrap@1.6.6@ngx-bootstrap/modal';
 import { JsonpModule } from '@angular/http';
+
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -30,7 +32,8 @@ let rootRouterModule:ModuleWithProviders=RouterModule.forRoot(rootRouterConfig);
     MissComponent,
     AboutComponent,
     PlugsComponent,
-    AdminComponent
+    AdminComponent,
+
   ],
   imports: [
     ModalModule.forRoot(),
@@ -39,7 +42,8 @@ let rootRouterModule:ModuleWithProviders=RouterModule.forRoot(rootRouterConfig);
     BrowserModule,
     FormsModule,
     HttpModule,
-    JsonpModule 
+    JsonpModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,11 +1,13 @@
 import { Component, OnInit,DoCheck } from '@angular/core';
+import { fadein } from "../animations/fadein"
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 declare var $:any;
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.css']
+  styleUrls: ['./about.component.css'],
+  animations:[fadein]
 })
 export class AboutComponent implements OnInit {
   constructor(public http:Http) {}
@@ -19,7 +21,7 @@ export class AboutComponent implements OnInit {
   ngOnInit() {
  	  	$(document).ready(function () {
 				$(".content_3").mCustomScrollbar({
-					scrollInertia:600,
+					scrollInertia:1000,
 					autoDraggerLength:false
 				});
 				function onScrollCallback(){

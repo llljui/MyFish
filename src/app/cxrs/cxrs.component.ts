@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { fadein } from "../animations/fadein"
 declare var $:any;
 @Component({
   selector: 'app-cxrs',
   templateUrl: './cxrs.component.html',
-  styleUrls: ['./cxrs.component.css']
+  styleUrls: ['./cxrs.component.css'],
+  animations:[fadein]
 })
 export class CxrsComponent implements OnInit {
 

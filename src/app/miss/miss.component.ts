@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { fadein } from "../animations/fadein"
 declare var $:any;
 @Component({
   selector: 'app-miss',
   templateUrl: './miss.component.html',
-  styleUrls: ['./miss.component.css']
+  styleUrls: ['./miss.component.css'],
+  animations:[fadein]
 })
 export class MissComponent implements OnInit {
 

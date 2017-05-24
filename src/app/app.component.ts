@@ -1,5 +1,6 @@
 import { Component,Injectable,OnInit,DoCheck } from '@angular/core';
 import { Http,URLSearchParams,Jsonp } from '@angular/http';
+import { fadein } from "./animations/fadein"
 import { Observable } from "rxjs/Rx";
 import 'rxjs/add/operator/map';
 /*import 'rxjs/add/operator/toPromise';*/
@@ -7,7 +8,8 @@ declare var $:any;
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
+  animations:[fadein]
 })
 @Injectable()
 export class AppComponent {
@@ -17,6 +19,7 @@ public searv:any=[];
 constructor(public http:Http,public jsonp:Jsonp){}
  public search={
    show:(value)=>{
+     $(".con_2").css({"transition":"1s","opacity":"1","box-shadow":"8px 8px 8px #423e3c","border":"1px solid white"});
      if (!value) {
        this.reslog='请您输入正确的关键词';
        this.searv=[];  
