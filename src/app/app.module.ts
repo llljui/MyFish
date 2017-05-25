@@ -8,7 +8,7 @@ import { ModuleWithProviders } from '@angular/core';
 import { rootRouterConfig } from './app.router';
 import { ModalModule } from '._ngx-bootstrap@1.6.6@ngx-bootstrap/modal';
 import { JsonpModule } from '@angular/http';
-
+import { BaiduMapModule } from "angular2-baidu-map";
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -44,6 +44,7 @@ let rootRouterModule:ModuleWithProviders=RouterModule.forRoot(rootRouterConfig);
     HttpModule,
     JsonpModule,
     BrowserAnimationsModule,
+    BaiduMapModule
   ],
   providers: [],
   bootstrap: [AppComponent]

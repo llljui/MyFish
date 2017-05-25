@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 li{list-style: none;}
-*{color: white}
+*{color:#78b980;}
 .textover{overflow:auto;width: 100%;height: 100%;scrollbar-highlight-color:green;} 
 a:link,a:visited,a:hover{color:inherit;}
 .links,.demo_functions{margin:10px;}

@@ -1,1 +1,5 @@
-<div [@fadein]="'in'">666</div>
+<div class="wrapper" [@fadein]="'in'">
+	    <baidu-map style="" class="baidu-map" ak="DakWTGFMK4d0GDPuKptg3skhWxQEr4Pp" [options]="opts" [offline]="offlineOpts"
+		  (onMapLoaded)="loadMap($event)" (onMarkerClicked)="clickMarker($event)">
+		</baidu-map>			
+</div>
