@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { fadein } from "../animations/fadein"
 declare var $:any;
+import { Http,URLSearchParams,Response } from '@angular/http';
+import 'rxjs/add/operator/map';
 @Component({
   selector: 'app-miss',
   templateUrl: './miss.component.html',
@@ -9,8 +11,10 @@ declare var $:any;
 })
 export class MissComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(public http:Http) { }
+  justclick(){
+  				this.http.get("1.txt").map(res=>res.text()).subscribe((res)=>{console.log(res);},(err)=>{console.log(err);});
+  			}
   ngOnInit() {
  	  	$(document).ready(function () {
 				$(".content_3").mCustomScrollbar({
